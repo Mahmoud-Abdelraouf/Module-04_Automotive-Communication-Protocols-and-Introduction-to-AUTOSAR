@@ -13,9 +13,9 @@ This repository contains materials and resources for Module 4 of the Embedded Sy
 5. [Software Requirements](#software-requirements)
 6. [Reference Materials](#reference-materials)
 
-### Sessions Overview
+## Sessions Overview
 
-#### Basics Communication Protocols
+### Basics Communication Protocols
 
 | Session     | Date                 | Title                                                                                                      |
 | ----------- | -------------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -23,7 +23,7 @@ This repository contains materials and resources for Module 4 of the Embedded Sy
 | Session 02  | 27 Nov 2023 (Monday) | SPI - SPI Basics, Building SPI Driver                                                                      |
 | Session 03  | 4 Dec 2023 (Monday)  | I2C - I2C Basics, Building I2C Driver, EEPROM Interfacing                                                  |
 
-#### Automotive Communications Protocols
+### Automotive Communications Protocols
 
 | Session     | Date                 | Title                                                                                                      |
 | ----------- | -------------------- | ---------------------------------------------------------------------------------------------------------- |
