@@ -11,7 +11,7 @@
 
 # Embedded Systems Workshops: Automotive Communication Protocols and introduction to AUTOSAR
 
-This repository contains materials and resources for Module 4 of the Embedded Systems Workshop, focusing on Advanced Communication Protocols and AUTOSAR Architecture.
+This repository contains materials and resources for Module 4 of the Embedded Systems Workshop, focusing on Automotive Communication Protocols and AUTOSAR Architecture.
 
 ## Workshop Overview
 
