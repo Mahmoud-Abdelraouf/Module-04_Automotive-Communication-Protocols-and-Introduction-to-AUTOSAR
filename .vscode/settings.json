@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "std_types.h": "c",
+        "bit_math.h": "c",
+        "stdint.h": "c",
+        "gpio_interface.h": "c",
+        "clcd_private.h": "c",
+        "stk_interface.h": "c",
+        "clcd_interface.h": "c",
+        "bit": "c",
+        "cstddef": "c",
+        "limits": "c",
+        "type_traits": "c"
+    },
+    "cSpell.words": [
+        "DDRAM"
+    ]
+}
