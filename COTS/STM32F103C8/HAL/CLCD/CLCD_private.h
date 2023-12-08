@@ -41,7 +41,7 @@
  * @param[in] value The 4-bit value to be sent to the LCD.
  * @note This function assumes that the required GPIO and timing functions have been initialized separately.
  */
-static void LCD_Send4Bits(const LCD_Config_t *config, uint8_t value);
+static void HAL_LCD_Send4Bits(const LCD_Config_t *config, uint8_t value);
 
 /**
  * @brief Sends 8-bit data to the LCD.
@@ -54,7 +54,7 @@ static void LCD_Send4Bits(const LCD_Config_t *config, uint8_t value);
  * @param[in] value The 8-bit value to be sent to the LCD.
  * @note This function assumes that the required GPIO and timing functions have been initialized separately.
  */
-static void LCD_Send8Bits(const LCD_Config_t *config, uint8_t value);
+static void HAL_LCD_Send8Bits(const LCD_Config_t *config, uint8_t value);
 
 
 #endif /**< LCD_PRIVATE_H */

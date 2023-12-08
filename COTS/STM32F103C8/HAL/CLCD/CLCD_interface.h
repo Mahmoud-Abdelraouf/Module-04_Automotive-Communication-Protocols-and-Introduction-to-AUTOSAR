@@ -8,6 +8,37 @@
 #define LCD_INTERFACE_H
 
 /**
+ * @brief Enum defining different port configurations for the LCD.
+ */
+typedef enum {
+    LCD_PORTA,  /**< Port A */
+    LCD_PORTB,  /**< Port B */
+    LCD_PORTC   /**< Port C */
+} LCD_PortConfig_t;
+
+/**
+ * @brief Enum defining different pin configurations for the LCD.
+ */
+typedef enum {
+    LCD_PIN0,   /**< Pin 0 */
+    LCD_PIN1,   /**< Pin 1 */
+    LCD_PIN2,   /**< Pin 2 */
+    LCD_PIN3,   /**< Pin 3 */
+    LCD_PIN4,   /**< Pin 4 */
+    LCD_PIN5,   /**< Pin 5 */
+    LCD_PIN6,   /**< Pin 6 */
+    LCD_PIN7,   /**< Pin 7 */
+    LCD_PIN8,   /**< Pin 8 */
+    LCD_PIN9,   /**< Pin 9 */
+    LCD_PIN10,  /**< Pin 10 */
+    LCD_PIN11,  /**< Pin 11 */
+    LCD_PIN12,  /**< Pin 12 */
+    LCD_PIN13,  /**< Pin 13 */
+    LCD_PIN14,  /**< Pin 14 */
+    LCD_PIN15   /**< Pin 15 */
+} LCD_PinConfig_t;
+
+/**
  * @brief Enum defining LCD operation modes.
  */
 typedef enum {
@@ -48,7 +79,7 @@ typedef struct {
  * @note This function assumes that the required GPIO and STK (delay) modules have been initialized separately.
  * @warning Passing a NULL pointer as config will result in no action.
  */
-void LCD_Init(const LCD_Config_t *config);
+void HAL_LCD_Init(const LCD_Config_t *config);
 
 /**
  * @brief Sends a command to the LCD module.
@@ -63,7 +94,7 @@ void LCD_Init(const LCD_Config_t *config);
  * @note This function assumes that the required GPIO module has been initialized separately.
  * @warning If the mode in the configuration is neither 4-bit nor 8-bit, the function returns without action.
  */
-void LCD_SendCommand(const LCD_Config_t *config, uint8_t command);
+void HAL_LCD_SendCommand(const LCD_Config_t *config, uint8_t command);
 
 /**
  * @brief Sends a character to the LCD module for display.
@@ -78,7 +109,7 @@ void LCD_SendCommand(const LCD_Config_t *config, uint8_t command);
  * @note This function assumes that the required GPIO module has been initialized separately.
  * @warning If the mode in the configuration is neither 4-bit nor 8-bit, the function returns without action.
  */
-void LCD_SendChar(const LCD_Config_t *config, uint8_t character);
+void HAL_LCD_SendChar(const LCD_Config_t *config, uint8_t character);
 
 /**
  * @brief Sends a null-terminated string to the LCD for display.
@@ -91,7 +122,7 @@ void LCD_SendChar(const LCD_Config_t *config, uint8_t character);
  * @param[in] string Pointer to the null-terminated string to be displayed on the LCD.
  * @note This function assumes that the required GPIO module and LCD character functions have been initialized separately.
  */
-void LCD_SendString(const LCD_Config_t *config, const uint8_t *string);
+void HAL_LCD_SendString(const LCD_Config_t *config, const uint8_t *string);
 
 /**
  * @brief Displays a double-precision floating-point number on the LCD.
@@ -105,7 +136,7 @@ void LCD_SendString(const LCD_Config_t *config, const uint8_t *string);
  * @param[in] number The double-precision floating-point number to be displayed on the LCD.
  * @note This function assumes that the required LCD character functions have been initialized separately.
  */
-void LCD_SendNumber(const LCD_Config_t *config, double number);
+void HAL_LCD_SendNumber(const LCD_Config_t *config, double number);
 
 /**
  * @brief Displays the integer part of a signed integer on the LCD.
@@ -118,7 +149,7 @@ void LCD_SendNumber(const LCD_Config_t *config, double number);
  * @param[in] number The signed integer value whose integer part is to be displayed on the LCD.
  * @note This function assumes that the required LCD character functions have been initialized separately.
  */
-void LCD_SendIntegerPart(const LCD_Config_t *config, s32 number);
+void HAL_LCD_SendIntegerPart(const LCD_Config_t *config, s32 number);
 
 /**
  * @brief Clears the display of the LCD.
@@ -130,7 +161,7 @@ void LCD_SendIntegerPart(const LCD_Config_t *config, s32 number);
  * @param[in] config Pointer to the LCD configuration structure.
  * @note This function assumes that the required LCD command functions have been initialized separately.
  */
-void LCD_Clear(const LCD_Config_t *config);
+void HAL_LCD_Clear(const LCD_Config_t *config);
 
 /**
  * @brief Moves the cursor of the LCD to a specific position.
@@ -143,6 +174,6 @@ void LCD_Clear(const LCD_Config_t *config);
  * @param[in] y The y-coordinate (column) on the LCD (0 to 15 for a 16-column display).
  * @note This function assumes that the required LCD command functions have been initialized separately.
  */
-void LCD_GoToXYPos(const LCD_Config_t *config, uint8_t x, uint8_t y);
+void HAL_LCD_GoToXYPos(const LCD_Config_t *config, uint8_t x, uint8_t y);
 
 #endif /* LCD_DRIVER_H */
