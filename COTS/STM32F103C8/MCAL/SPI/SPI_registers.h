@@ -2,8 +2,12 @@
  ********************************************************************************************************************************** 
  * @file SPI_registers.h
  * @brief Header file for SPI peripheral register definitions.
+ * 
+ * This header file provides essential definitions and structures necessary for interfacing with the Serial Peripheral Interface (SPI) on microcontrollers, 
+ * specifically focusing on the STM32 platform.
+ ********************************************************************************************************************************** 
  * @version V01
- * @date 15 Jul 2023
+ * @date 10 Dec 2023
  * @author Mahmoud Abdelraouf
  * 
  * @copyright Copyright (c) 2023

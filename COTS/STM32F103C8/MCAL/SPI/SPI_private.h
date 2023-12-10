@@ -10,8 +10,10 @@
  *       Instead, include the public interface file (SPI_interface.h).
  * 
  * @author Mahmoud Abdelraouf Mahmoud
- * @date 15 Jul 2023
+ * @date 10 Dec 2023
  * @version V01
+ * 
+ * @copyright Copyright (c) 2023
  ********************************************************************************************************************************** 
  */
 

@@ -6,11 +6,12 @@
  * This file contains the configuration options for the SPI driver.
  ********************************************************************************************************************************** 
  * @author Mahmoud Abdelraouf Mahmoud
- * @date 15 Jul 2023
+ * @date 10 Dec 2023
  * @version V01
+ * 
+ * @copyright Copyright (c) 2023
  **********************************************************************************************************************************
  */
-
 #ifndef __SPI_CONFIG_H__
 #define __SPI_CONFIG_H__
 

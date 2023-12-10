@@ -6,7 +6,7 @@
  * This file contains the function prototypes and definitions for the SPI driver.
  ********************************************************************************************************************************** 
  * @author Mahmoud Abdelraouf Mahmoud
- * @date 15 Jul 2023
+ * @date 10 Dec 2023
  * @version V01
  * 
  * @copyright Copyright (c) 2023
