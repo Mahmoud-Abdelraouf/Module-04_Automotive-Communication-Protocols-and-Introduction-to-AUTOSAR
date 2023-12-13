@@ -16,7 +16,6 @@
 #ifndef __SPI_INTERFACE_H__
 #define __SPI_INTERFACE_H__
 
-#include "SPI_registers.h"
 
 /**
  * @addtogroup SPI_Configuration_Options
@@ -171,42 +170,7 @@ typedef struct
  */
 
 /**
- * @brief Get the base address of the specified SPI peripheral.
- *
- * This function returns the base address of the specified SPI peripheral.
- *
- * @param[in] Copy_SPI The SPI peripheral to get the base address for. Must be one of the following:
- *                - SPI1: SPI1 peripheral.
- *                - SPI2: SPI2 peripheral.
- *                - SPI3: SPI3 peripheral.
- *
- * @return The base address of the specified SPI peripheral as a pointer to the corresponding register structure.
- *         If an invalid SPI peripheral is provided, the function returns NULL.
- *
- * @note Example Usage:
- * @code
- * /// Choose the SPI peripheral you want to use (in this case, SPI1)
- * SPI_Peripheral_t spi_selected = SPI1;
- *
- * /// Get the base address of SPI1 using the SPI_GetBaseAddress function
- * SPI_t *spi1_base_address = SPI_GetBaseAddress(spi_selected);
- *
- * /// Now you can access SPI1 registers and configure the SPI communication
- * /// For example, you can configure data frame format, clock polarity, etc.
- *
- * /// ... (add your SPI configuration code here)
- * @endcode
- */
-SPI_t SPI_SelectSpiPeripheral(SPI_Peripheral_t Copy_SPI);
-
-/**
  * @brief Initialize the SPI peripheral.
- *
- * This function initializes the SPI peripheral with the specified configuration.
- * @param[in] Copy_SelectedSPI The SPI peripheral selected to use. Must be one of the following:
- *                                          - SPI1: SPI1 peripheral.
- *                                          - SPI2: SPI2 peripheral.
- *                                          - SPI3: SPI3 peripheral.
  * 
  * @param[in] Copy_SPIConfig Pointer to the SPI configuration structure that holds the configuration options.
  *                            The structure must contain the following fields:
@@ -235,10 +199,7 @@ SPI_t SPI_SelectSpiPeripheral(SPI_Peripheral_t Copy_SPI);
  * @retval None
  *
  * @note Example Usage:
- * @code
- * /// Choose the SPI peripheral you want to use (in this case, SPI1)
- * SPI_t SPI_1 = SPI_SelectSpiPeripheral(SPI1);
- * 
+ * @code  
  * /// Create an SPI configuration structure and set the desired options
  * SPI_config_t spi_config;
  * spi_config.DataFrame = SPI_DATA_FRAME_8BIT;
@@ -248,18 +209,17 @@ SPI_t SPI_SelectSpiPeripheral(SPI_Peripheral_t Copy_SPI);
  * 
  * OR
  * 
- * /// Select the SPI peripheral (e.g., SPI_1)
  * 	SPI_config_t Local_Spi1 = { .BaudRateDIV = SPI_BAUD_RATE_DIV2, .SpiPeripheral = SPI_1,
  *							                .DataFrame = SPI_DATA_FRAME_8BIT, .ClockPolarity = SPI_CLOCK_POLARITY_HIGH,
  *							                .ClockPhase = SPI_CLOCK_PHASE_SECOND_EDGE,.FrameFormat = SPI_MSB_FIRST};
  *
  * /// Initialize the SPI peripheral using the SPI_voidInit function
- * SPI_voidInit(SPI_1,&Local_Spi1);
+ * SPI_voidInit(&Local_Spi1);
  *
  * /// Now the SPI peripheral is initialized and ready to use for communication.
  * @endcode
  */
-void SPI_Init(SPI_t Copy_SelectedSPI, const SPI_config_t *Copy_SPIConfig);
+void SPI_Init(const SPI_config_t *Copy_SPIConfig);
       
 /**
  * @brief Perform a full-duplex SPI data transfer.
@@ -291,7 +251,7 @@ void SPI_Init(SPI_t Copy_SelectedSPI, const SPI_config_t *Copy_SPIConfig);
  * SPI_voidTransfer(spi_selected, tx_data, rx_data, sizeof(tx_data));
  * @endcode
  */
-void SPI_Transfer(SPI_t Copy_SPI, u8 *Copy_TxData, u8 *Copy_RxData, u16 Copy_Size);
+void SPI_Transfer(u8 *Copy_TxData, u8 *Copy_RxData, u16 Copy_Size);
 
 /**
  * @} SPI_Functions
