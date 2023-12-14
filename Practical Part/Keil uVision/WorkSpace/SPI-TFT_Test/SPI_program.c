@@ -30,7 +30,7 @@
  * @{
  */
 
-void SPI_Init(const SPI_config_t *Copy_SPIConfig)
+void SPI_Init(const SPI_Config_t *Copy_SPIConfig)
 {
   /********************************< Configure the SPI peripheral ********************************/
   if(Copy_SPIConfig == NULL)

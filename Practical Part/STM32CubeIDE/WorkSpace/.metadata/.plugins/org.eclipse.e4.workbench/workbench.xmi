@@ -77,9 +77,9 @@
           <tags>persp.actionSet:org.eclipse.debug.ui.profileActionSet</tags>
           <tags>persp.viewSC:org.eclipse.mylyn.tasks.ui.views.tasks</tags>
           <tags>persp.newWizSC:org.eclipse.mylyn.tasks.ui.wizards.new.repository.task</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_fkn14poOEe69FKC79ziqTQ" selectedElement="_fkn16JoOEe69FKC79ziqTQ" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_fkn14poOEe69FKC79ziqTQ" selectedElement="_fkn145oOEe69FKC79ziqTQ" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_fkn145oOEe69FKC79ziqTQ" elementId="topLeft" containerData="2500" selectedElement="_fkn15JoOEe69FKC79ziqTQ">
-              <tags>noFocus</tags>
+              <tags>active</tags>
               <children xsi:type="advanced:Placeholder" xmi:id="_fkn15JoOEe69FKC79ziqTQ" elementId="org.eclipse.ui.navigator.ProjectExplorer" ref="_fker8JoOEe69FKC79ziqTQ"/>
               <children xsi:type="advanced:Placeholder" xmi:id="_fkn15ZoOEe69FKC79ziqTQ" elementId="org.eclipse.cdt.ui.CView" toBeRendered="false" ref="_fkf6EJoOEe69FKC79ziqTQ"/>
               <children xsi:type="advanced:Placeholder" xmi:id="_fkn15poOEe69FKC79ziqTQ" elementId="org.eclipse.ui.views.ResourceNavigator" toBeRendered="false" ref="_fkf6EZoOEe69FKC79ziqTQ"/>
@@ -235,14 +235,11 @@
       <children xsi:type="basic:PartStack" xmi:id="_fkYlUZoOEe69FKC79ziqTQ" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_HFQxwJoTEe69FKC79ziqTQ">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
-        <tags>active</tags>
         <children xsi:type="basic:Part" xmi:id="_HFQxwJoTEe69FKC79ziqTQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="main.c" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;main.c&quot; partName=&quot;main.c&quot; title=&quot;main.c&quot; tooltip=&quot;TFT_Test/src/main.c&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/TFT_Test/src/main.c&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;566&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
           <tags>removeOnHide</tags>
-          <tags>active</tags>
-          <tags>activeOnClose</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_0e7BYJoVEe69FKC79ziqTQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="SPI_interface.h" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;SPI_interface.h&quot; partName=&quot;SPI_interface.h&quot; title=&quot;SPI_interface.h&quot; tooltip=&quot;TFT_Test/include/SPI_interface.h&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/TFT_Test/include/SPI_interface.h&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;10674&quot; selectionTopPixel=&quot;5155&quot;/>&#xD;&#xA;&lt;/editor>"/>
@@ -282,6 +279,8 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; currentWorkingSetName=&quot;Aggregate for window 1702509754839&quot; org.eclipse.cdt.ui.cview.groupincludes=&quot;false&quot; org.eclipse.cdt.ui.cview.groupmacros=&quot;false&quot; org.eclipse.cdt.ui.editor.CUChildren=&quot;true&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_fpQeQJoOEe69FKC79ziqTQ" elementId="org.eclipse.ui.navigator.ProjectExplorer">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -520,7 +519,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_fXwekJoOEe69FKC79ziqTQ" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_jMAKQJokEe6n9ePJtU0jVw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_fE6bZZoOEe69FKC79ziqTQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_QVAkMJomEe6PMKChASufQQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_fE6bZZoOEe69FKC79ziqTQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_fXwekZoOEe69FKC79ziqTQ" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -547,7 +546,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_fXwelZoOEe69FKC79ziqTQ" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_jMGQ4JokEe6n9ePJtU0jVw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_fE50GJoOEe69FKC79ziqTQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_QVEOkpomEe6PMKChASufQQ" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_fE50GJoOEe69FKC79ziqTQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_fXwelpoOEe69FKC79ziqTQ" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -2708,7 +2707,7 @@
   <addons xmi:id="_fEZdw5oOEe69FKC79ziqTQ" elementId="MinMax Addon" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon"/>
   <addons xmi:id="_fEZdxJoOEe69FKC79ziqTQ" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_fEgycJoOEe69FKC79ziqTQ" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
-  <addons xmi:id="_izarIZokEe6n9ePJtU0jVw" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
+  <addons xmi:id="_QAN_8ZomEe6PMKChASufQQ" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
   <addons xmi:id="_dz0JgGOlEeSMMaPQU2nlzw" elementId="org.eclipse.ui.ide.application.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.ide.application/org.eclipse.ui.internal.ide.application.addons.ModelCleanupAddon"/>
   <categories xmi:id="_fE07gJoOEe69FKC79ziqTQ" elementId="org.eclipse.ui.category.edit" name="Edit"/>
   <categories xmi:id="_fE07gZoOEe69FKC79ziqTQ" elementId="org.eclipse.mylyn.wikitext.ui.editor.category" name="WikiText Markup Editing Commands" description="commands for editing lightweight markup"/>
