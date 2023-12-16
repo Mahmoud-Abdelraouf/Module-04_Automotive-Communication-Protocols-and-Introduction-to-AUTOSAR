@@ -16,7 +16,7 @@
 /****************************< HAL ****************************/
 #include "TFT_interface.h"
 /****************************< APP ****************************/
-#include "image.h" 
+//#include "image.h" 
 
 int main(void)
 {
@@ -29,7 +29,7 @@ int main(void)
 	MCAL_RCC_EnablePeripheral(RCC_APB2, RCC_APB2ENR_SPI1EN);
 	
 	/**< config spi 1 */
-	SPI_config_t spi_1;
+	SPI_Config_t spi_1;
 	
 	spi_1.BaudRateDIV = SPI_BAUD_RATE_DIV2;
 	spi_1.ClockPolarity = SPI_IDLE_HIGH;
@@ -63,7 +63,7 @@ int main(void)
 	TFT_Init(&tft_1);
 	
 	
-	TFT_DisplayImage(&tft_1, image);
+	//TFT_DisplayImage(&tft_1, image);
 	
 
 	for(;;);

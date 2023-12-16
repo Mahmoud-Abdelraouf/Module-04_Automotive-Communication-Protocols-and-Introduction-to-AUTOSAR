@@ -10,7 +10,8 @@
     "bit": "c",
     "cstddef": "c",
     "limits": "c",
-    "type_traits": "c"
+    "type_traits": "c",
+    "spi_interface.h": "c"
   },
   "cSpell.words": [
     "DDRAM"
