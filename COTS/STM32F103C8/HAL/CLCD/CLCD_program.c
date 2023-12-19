@@ -238,3 +238,5 @@ static void HAL_LCD_Send8Bits(const LCD_Config_t *config, uint8_t value)
     /**< Set the enable pin to low */
     MCAL_GPIO_SetPinValue(config->enablePin.LCD_PortId, config->enablePin.LCD_PinId, GPIO_LOW);
 }
+
+
