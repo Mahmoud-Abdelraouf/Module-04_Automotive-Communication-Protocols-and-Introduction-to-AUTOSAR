@@ -35,16 +35,6 @@ void HAL_LCD_Init(const LCD_Config_t *config)
         {
             MCAL_GPIO_SetPinMode(config->dataPins[i].LCD_PortId, config->dataPins[i].LCD_PinId, GPIO_OUTPUT_PUSH_PULL_10MHZ);
         }
-        
-        MCAL_STK_SetDelay_ms(20);
-        HAL_LCD_SendCommand(config, _LCD_8BIT_MODE_2_LINE);
-        MCAL_STK_SetDelay_ms(5);
-        HAL_LCD_SendCommand(config, _LCD_8BIT_MODE_2_LINE);
-        MCAL_STK_SetBusyWait(150);
-        HAL_LCD_SendCommand(config, _LCD_8BIT_MODE_2_LINE);
-        
-        HAL_LCD_SendCommand(config, _LCD_4BIT_MODE_2_LINE);
-           
     }
     else if(LCD_8BitMode)
     {
@@ -52,13 +42,6 @@ void HAL_LCD_Init(const LCD_Config_t *config)
         {
             MCAL_GPIO_SetPinMode(config->dataPins[i].LCD_PortId, config->dataPins[i].LCD_PinId, GPIO_OUTPUT_PUSH_PULL_10MHZ);
         }
-
-        MCAL_STK_SetDelay_ms(20);
-        HAL_LCD_SendCommand(config, _LCD_8BIT_MODE_2_LINE);
-        MCAL_STK_SetDelay_ms(5);
-        HAL_LCD_SendCommand(config, _LCD_8BIT_MODE_2_LINE);
-        MCAL_STK_SetBusyWait(150);
-        HAL_LCD_SendCommand(config, _LCD_8BIT_MODE_2_LINE);  
     }
     else
     {
@@ -69,7 +52,10 @@ void HAL_LCD_Init(const LCD_Config_t *config)
     HAL_LCD_SendCommand(config, _LCD_RETURN_HOME);
     HAL_LCD_SendCommand(config, _LCD_ENTRY_MODE_INC_SHIFT_OFF);
     HAL_LCD_SendCommand(config, _LCD_DISPLAY_ON_UNDERLINE_OFF_CURSOR_OFF);
-    HAL_LCD_SendCommand(config, _LCD_4BIT_MODE_2_LINE);
+    if(config->mode == LCD_4BitMode);
+    {
+        HAL_LCD_SendCommand(config, _LCD_4BIT_MODE_2_LINE);
+    }
     HAL_LCD_SendCommand(config, 0x80);
 }
 

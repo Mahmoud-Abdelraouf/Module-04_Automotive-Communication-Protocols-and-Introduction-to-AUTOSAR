@@ -38,7 +38,7 @@ typedef enum {
     LCD_PORTA,  /**< Port A */
     LCD_PORTB,  /**< Port B */
     LCD_PORTC   /**< Port C */
-} LCD_PortConfig_t;
+} LCD_Port_t;
 
 /**
  * @brief Enum defining different pin configurations for the LCD.
@@ -60,7 +60,7 @@ typedef enum {
     LCD_PIN13,  /**< Pin 13 */
     LCD_PIN14,  /**< Pin 14 */
     LCD_PIN15   /**< Pin 15 */
-} LCD_PinConfig_t;
+} LCD_Pin_t;
 
 /**
  * @brief Enum defining LCD operation modes.
