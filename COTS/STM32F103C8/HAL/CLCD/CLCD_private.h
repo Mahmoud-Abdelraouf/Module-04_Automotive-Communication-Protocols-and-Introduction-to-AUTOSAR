@@ -7,9 +7,7 @@
 #ifndef LCD_PRIVATE_H
 #define LCD_PRIVATE_H
 
-/**
- * @brief Commands for initializing LCD.
- */
+/*****************************< Commands for initializing LCD. *****************************/
 #define _LCD_CLEAR                      0X01  // Clears the display.
 #define _LCD_RETURN_HOME                0x02  // Returns cursor to home position.
 #define _LCD_ENTRY_MODE_DEC_SHIFT_OFF   0x04  // Sets entry mode to decrement cursor position without display shift.
@@ -31,6 +29,7 @@
 
 #define _LCD_CGRAM_START                0x40  // Start address for Character Generator RAM (CGRAM) in the LCD.
 #define _LCD_DDRAM_START                0x80  // Start address for Display Data RAM (DDRAM) in the LCD.
+/*****************************< End of Commands for initializing LCD. *****************************/
 
 /*****************************< Private function prototypes *****************************/ 
 /**

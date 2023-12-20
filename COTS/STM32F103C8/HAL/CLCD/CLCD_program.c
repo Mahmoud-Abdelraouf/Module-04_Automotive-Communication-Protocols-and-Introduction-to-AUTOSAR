@@ -48,11 +48,18 @@ void HAL_LCD_Init(const LCD_Config_t *config)
         return;
     }
     
+    MCAL_STK_SetDelay_ms(20);
+    HAL_LCD_SendCommand(config, _LCD_8BIT_MODE_2_LINE);
+    MCAL_STK_SetDelay_ms(5);
+    HAL_LCD_SendCommand(config, _LCD_8BIT_MODE_2_LINE);
+    MCAL_STK_SetBusyWait(150);
+    HAL_LCD_SendCommand(config, _LCD_8BIT_MODE_2_LINE);
+
     HAL_LCD_SendCommand(config, _LCD_CLEAR);
     HAL_LCD_SendCommand(config, _LCD_RETURN_HOME);
     HAL_LCD_SendCommand(config, _LCD_ENTRY_MODE_INC_SHIFT_OFF);
     HAL_LCD_SendCommand(config, _LCD_DISPLAY_ON_UNDERLINE_OFF_CURSOR_OFF);
-    if(config->mode == LCD_4BitMode);
+    if(config->mode == LCD_4BitMode)
     {
         HAL_LCD_SendCommand(config, _LCD_4BIT_MODE_2_LINE);
     }
@@ -165,15 +172,15 @@ void HAL_LCD_Clear(const LCD_Config_t *config)
 
 void HAL_LCD_GoToXYPos(const LCD_Config_t *config, uint8_t x, uint8_t y) {
     /**< Check if the coordinates are within bounds */ 
-    if ((x < 2) && (y >= 0 && y <= 15)) {
+    if ((y < 2) && (x >= 0 && x <= 15)) {
         u8 localAddress = 0;
 
-        switch (x) {
+        switch (y) {
             case 0:
-                localAddress = y;
+                localAddress = x;
                 break;
             case 1:
-                localAddress = y + _LCD_CGRAM_START;
+                localAddress = x + _LCD_CGRAM_START;
                 break;
             default:
                 break;
