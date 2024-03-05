@@ -10,7 +10,7 @@
 /**
  * @brief USART base address.
  */
-#define USART1_BASE_ADDRESS 0x40004400
+#define USART1_BASE_ADDRESS 0x40013800
 
 /**
  * @brief Structure representing USART registers.

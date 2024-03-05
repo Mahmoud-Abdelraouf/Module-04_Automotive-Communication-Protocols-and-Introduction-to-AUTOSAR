@@ -51,7 +51,7 @@ void main(void)
 	/**< Display image */
 	TFT_DisplayImage(&tft1, image);
 
-	for(;;);
+	//for(;;);
 
 }
 

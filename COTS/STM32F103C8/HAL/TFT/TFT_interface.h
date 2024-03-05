@@ -56,31 +56,6 @@ typedef enum
     TFT_COLOR_SILVER        = 0xC618    /**< Silver color (192, 192, 192) */
 } TFT_Color_t;
 
-typedef enum {
-    TFT_PORTA,
-    TFT_PORTB,
-    TFT_PORTC
-} TFT_PortConfig_t;
-
-typedef enum {
-    TFT_PIN0,
-    TFT_PIN1,
-    TFT_PIN2,
-    TFT_PIN3,
-    TFT_PIN4,
-    TFT_PIN5,
-    TFT_PIN6,
-    TFT_PIN7,
-    TFT_PIN8,
-    TFT_PIN9,
-    TFT_PIN10,
-    TFT_PIN11,
-    TFT_PIN12,
-    TFT_PIN13,
-    TFT_PIN14,
-    TFT_PIN15,
-} TFT_PinConfig_t;
-
 /**
  * @struct TFT_PinPairs
  * @brief Structure to represent GPIO port and pin pairs for TFT signals.
@@ -104,6 +79,7 @@ typedef struct {
 typedef struct {
     TFT_PinPairs TFT_CSPin;     /**< Chip Select (CS) pin configuration. */
     TFT_PinPairs TFT_DCPin;     /**< Data/Command Control (DC) pin configuration. */
+    TFT_PinPairs TFT_SDAPin;    /**< Serial Data Input (SDA) pin configuration. */
     TFT_PinPairs TFT_RESPin;    /**< LCM Reset (RES) pin configuration. */
 } TFT_Config_t;
 
@@ -139,7 +115,7 @@ typedef struct {
  *
  * @note This function sends a series of commands to configure the TFT display.
  */
-void TFT_Init(const TFT_Config_t *Copy_TftDisplay);
+void TFT_Init(const TFT_Config_t *Copy_TftDisplay, SPI_t Copy_SpiPeripheral);
 
 /**
  * @brief Clears the TFT screen by filling it with the default background color.
@@ -150,7 +126,7 @@ void TFT_Init(const TFT_Config_t *Copy_TftDisplay);
  * @param[in] Copy_SpiPeripheral The SPI peripheral to be used for communication.
  * @retval None
  */
-void TFT_ClearScreen(const TFT_Config_t *Copy_TftDisplay);
+void TFT_ClearScreen(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral);
 
 /**
  * @brief Draws a line between two points with the given color.
@@ -165,7 +141,7 @@ void TFT_ClearScreen(const TFT_Config_t *Copy_TftDisplay);
  * @param[in] color The color of the line in 16-bit RGB565 format.
  * @retval None
  */
-void TFT_DrawLine(const TFT_Config_t *Copy_TftDisplay, u16 x1, u16 y1, u16 x2, u16 y2, u16 color);
+void TFT_DrawLine(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u16 x1, u16 y1, u16 x2, u16 y2, u16 color);
 
 /**
  * @brief Displays an image on the TFT screen.
@@ -179,7 +155,7 @@ void TFT_DrawLine(const TFT_Config_t *Copy_TftDisplay, u16 x1, u16 y1, u16 x2, u
  * @param[in] image Pointer to the image data in RGB565 format.
  * @retval None
  */
-void TFT_DisplayImage(const TFT_Config_t *Copy_TftDisplay, const u16 *Copy_Image);
+void TFT_DisplayImage(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, const u16 *Copy_Image);
 
 /**
  * @brief Displays text on the TFT screen.

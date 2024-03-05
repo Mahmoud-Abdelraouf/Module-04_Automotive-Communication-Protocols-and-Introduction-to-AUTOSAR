@@ -1,0 +1,36 @@
+18:07:20 **** Incremental Build of configuration Debug for project Bootloader_ ****
+make all 
+Building file: ../src/Parse.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/Parse.d" -MT"src/Parse.o" -c -o "src/Parse.o" "../src/Parse.c"
+In file included from ../src/Parse.c:10:0:
+../include/STD_TYPES.h:30:0: warning: "NULL" redefined
+ #define NULL ((void *)0x0)     /**< Null pointer definition */
+ 
+In file included from c:\sdk_win_64\sdk_win_64\winarm\armgcc\arm-none-eabi\include\sys\_types.h:159:0,
+                 from c:\sdk_win_64\sdk_win_64\winarm\armgcc\arm-none-eabi\include\sys\reent.h:15,
+                 from c:\sdk_win_64\sdk_win_64\winarm\armgcc\arm-none-eabi\include\stdio.h:60,
+                 from ../src/Parse.c:9:
+c:\sdk_win_64\sdk_win_64\winarm\armgcc\lib\gcc\arm-none-eabi\7.2.1\include\stddef.h:406:0: note: this is the location of the previous definition
+ #define NULL ((void *)0)
+ 
+Finished building: ../src/Parse.c
+ 
+Building target: Bootloader_.elf
+Invoking: Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"Bootloader_.map" --specs=nano.specs -o "Bootloader_.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/FPEC_program.o ./src/GPIO_program.o ./src/Parse.o ./src/RCC_program.o ./src/STK_program.o ./src/UART_program.o ./src/main.o   
+Finished building target: Bootloader_.elf
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "Bootloader_.elf"  "Bootloader_.hex"
+Finished building: Bootloader_.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "Bootloader_.elf"
+   text	   data	    bss	    dec	    hex	filename
+  10215	    180	    528	  10923	   2aab	Bootloader_.elf
+Finished building: Bootloader_.siz
+ 
+
+18:07:21 Build Finished (took 807ms)
+

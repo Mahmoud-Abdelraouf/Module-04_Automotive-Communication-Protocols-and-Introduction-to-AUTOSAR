@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="D:\Projects\Embedded\Bare_Matel\Work\AVR-Crash-Course\Practical_Part\Eclipse\DIO"/>
+		<item value="D:\Projects\Embedded\Bare_Matel\Work\IEEE_Module_03\COTS\STM32F103C8\APP\Bootloader"/>
+	</list>
+	<section name="org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea">
+		<item value="D:\Projects\Embedded\Bare_Matel\Work\IEEE_Module_04\Practical Part\STM32CubeIDE\WorkSpace\GPIO_Test" key="OUTSIDE_LOCATION"/>
+	</section>
+</section>

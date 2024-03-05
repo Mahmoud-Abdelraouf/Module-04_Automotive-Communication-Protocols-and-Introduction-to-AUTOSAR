@@ -2705,6 +2705,9 @@
 					<entry kind="includePath" name="C:/SDK_Win_64/SDK_Win_64/WinARM/ArmGCC/arm-none-eabi/include">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
+					<entry kind="includePath" name="/${ProjName}/#undef __ARM_FEATURE_DSP">
+						<flag value="BUILTIN|READONLY|VALUE_WORKSPACE_PATH"/>
+					</entry>
 					<entry kind="macro" name="HSE_VALUE" value="8000000">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>

@@ -1,8 +1,37 @@
-04:05:41 **** Build of configuration Debug for project TFT_Test ****
+13:24:10 **** Incremental Build of configuration Debug for project DIO_Test_ ****
 make all 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "TFT_Test.elf"
-   text	   data	    bss	    dec	    hex	filename
-  50419	    176	    420	  51015	   c747	TFT_Test.elf
-Finished building: TFT_Test.siz
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: DIO_Test_.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,DIO_Test_.map -mmcu=atmega32 -o "DIO_Test_.elf"  ./DIO_program.o ./main.o   
+Finished building target: DIO_Test_.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S DIO_Test_.elf  >"DIO_Test_.lss"
+Finished building: DIO_Test_.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex DIO_Test_.elf  "DIO_Test_.hex"
+Finished building: DIO_Test_.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 DIO_Test_.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5916 bytes (18.1% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
  
