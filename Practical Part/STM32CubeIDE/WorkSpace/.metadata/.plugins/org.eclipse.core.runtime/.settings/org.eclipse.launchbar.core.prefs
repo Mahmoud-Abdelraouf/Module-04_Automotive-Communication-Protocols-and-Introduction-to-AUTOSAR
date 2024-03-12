@@ -1,12 +1,13 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:TFT_Test.elf,org.eclipse.launchbar.core.descriptorType.default\:TFT_Test Debug,org.eclipse.launchbar.core.descriptorType.default\:GPIO_Test.elf,org.eclipse.launchbar.core.descriptorType.default\:Bootloader.elf,org.eclipse.launchbar.core.descriptorType.default\:Bootloader Debug,org.eclipse.launchbar.core.descriptorType.default\:GPIO_Test Debug,org.eclipse.launchbar.core.descriptorType.default\:Bootloader_.elf,org.eclipse.launchbar.core.descriptorType.default\:Bootloader_ Debug
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:TFT_Test.elf,org.eclipse.launchbar.core.descriptorType.default\:GPIO_Test.elf,org.eclipse.launchbar.core.descriptorType.default\:Bootloader.elf,org.eclipse.launchbar.core.descriptorType.default\:Bootloader Debug,org.eclipse.launchbar.core.descriptorType.default\:GPIO_Test Debug,org.eclipse.launchbar.core.descriptorType.default\:Bootloader_.elf,org.eclipse.launchbar.core.descriptorType.default\:TFT_Test Debug
 eclipse.preferences.version=1
 org.eclipse.launchbar.core.descriptorType.default\:Bootloader\ Debug/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:Bootloader\ Debug/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:Bootloader.elf/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:Bootloader_\ Debug/activeLaunchMode=debug
-org.eclipse.launchbar.core.descriptorType.default\:TFT_Test\ Debug/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:TFT_Test\ Debug\ (1)/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:TFT_Test\ Debug/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:TFT_Test\ Debug/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:TFT_Test.elf/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:TFT_Test.elf/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
