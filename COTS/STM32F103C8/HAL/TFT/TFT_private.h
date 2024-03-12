@@ -237,7 +237,7 @@
  * TFT_SendCommand(&tftConfig, spiPeripheral, 0xA1);
  * @endcode
  */
-static void TFT_SendCommand(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u8 Copy_Command);
+static void TFT_SendCommand(const TFT_Config_t *Copy_TftDisplay, u8 Copy_Command);
 
 /**
  * @brief Send data to the TFT display using SPI communication.
@@ -272,7 +272,7 @@ static void TFT_SendCommand(const TFT_Config_t *Copy_TftDisplay, const SPI_t Cop
  * TFT_SendData(spiPeripheral, &tftConfig, 0x55);
  * @endcode
  */
-static void TFT_SendData(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u8 Copy_Data);
+static void TFT_SendData(const TFT_Config_t *Copy_TftDisplay, u8 Copy_Data);
 
 /**
  * @brief Draw a pixel on the TFT display.
@@ -308,7 +308,7 @@ static void TFT_SendData(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_S
  * TFT_DrawPixel(&tftConfig, spiPeripheral, 100, 50, TFT_COLOR_RED);
  * @endcode
  */
-static void TFT_DrawPixel(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u16 Copy_XPosition, u16 Copy_YPosition, u16 color);
+static void TFT_DrawPixel(const TFT_Config_t *Copy_TftDisplay, u16 Copy_XPosition, u16 Copy_YPosition, u16 color);
 
 /**
  * @brief Set the X address on the TFT display controller.
@@ -341,7 +341,7 @@ static void TFT_DrawPixel(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_
  * TFT_SetXAddress(&tftConfig, spiPeripheral, 100);
  * @endcode
  */
-static void TFT_SetXAddress(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u16 Copy_XPosition);
+static void TFT_SetXAddress(const TFT_Config_t *Copy_TftDisplay, u16 Copy_XPosition);
 
 /**
  * @brief Set the Y address on the TFT display controller.
@@ -374,7 +374,7 @@ static void TFT_SetXAddress(const TFT_Config_t *Copy_TftDisplay, const SPI_t Cop
  * TFT_SetYAddress(&tftConfig, spiPeripheral, 50);
  * @endcode
  */
-static void TFT_SetYAddress(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u16 Copy_YPosition);
+static void TFT_SetYAddress(const TFT_Config_t *Copy_TftDisplay, u16 Copy_YPosition);
 
 /**
  * @brief Set the X and Y addresses on the TFT display controller.
@@ -409,7 +409,7 @@ static void TFT_SetYAddress(const TFT_Config_t *Copy_TftDisplay, const SPI_t Cop
  * TFT_SetXYAddress(&tftConfig, spiPeripheral, 100, 50);
  * @endcode
  */
-static void TFT_SetXYAddress(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral, u16 Copy_XPosition, u16 Copy_YPosition);
+static void TFT_SetXYAddress(const TFT_Config_t *Copy_TftDisplay, u16 Copy_XPosition, u16 Copy_YPosition);
 
 /**
  * @brief Internal function to initialize the TFT display controller.
@@ -441,7 +441,7 @@ static void TFT_SetXYAddress(const TFT_Config_t *Copy_TftDisplay, const SPI_t Co
  * TFT_InitController(&tftConfig, spiPeripheral);
  * @endcode
  */
-static void TFT_InitController(const TFT_Config_t *Copy_TftDisplay, const SPI_t Copy_SpiPeripheral);
+static void TFT_InitController(const TFT_Config_t *Copy_TftDisplay);
 
 /**
  * @brief Internal function to draw a character on the TFT display.
