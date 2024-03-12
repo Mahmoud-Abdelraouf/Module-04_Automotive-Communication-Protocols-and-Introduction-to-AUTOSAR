@@ -49,26 +49,6 @@
 
 void TFT_Init(const TFT_Config_t *Copy_TftDisplay)
 {
-    // /**< Set the Reset (RES) pin to high logic level to release reset signal */
-    // MCAL_GPIO_SetPinValue(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_HIGH);
-    
-    // /**< Wait for a specified delay before proceeding */
-    // MCAL_STK_SetDelay_ms(5);
-    
-    // /**< Set the Reset (RST) pin to low logic level to assert reset signal */
-    // MCAL_GPIO_SetPinValue(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_LOW);
-    
-    // /**< Wait for a short delay */
-    // MCAL_STK_SetDelay_ms(15);
-    
-    // /**< Set the Reset (RES) pin to high logic level to release reset signal */
-    // MCAL_GPIO_SetPinValue(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_HIGH);
-    
-    // /**< Wait for a specified delay before proceeding */
-    // MCAL_STK_SetDelay_ms(15);
-    
-    // TFT_InitController(Copy_TftDisplay);
-
     /**< init reset pin */
     MCAL_GPIO_SetPinValue(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_HIGH);
     MCAL_STK_SetBusyWait(100);
