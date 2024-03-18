@@ -49,49 +49,25 @@
 
 void TFT_Init(const TFT_Config_t *Copy_TftDisplay)
 {
-    // /**< Set the Reset (RES) pin to high logic level to release reset signal */
-    // MCAL_GPIO_SetPinValue(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_HIGH);
+     /**< Set the Reset (RES) pin to high logic level to release reset signal */
+     MCAL_GPIO_SetPinValue(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_HIGH);
     
-    // /**< Wait for a specified delay before proceeding */
-    // MCAL_STK_SetDelay_ms(5);
+     /**< Wait for a specified delay before proceeding */
+     MCAL_STK_SetDelay_ms(5);
     
-    // /**< Set the Reset (RST) pin to low logic level to assert reset signal */
-    // MCAL_GPIO_SetPinValue(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_LOW);
+     /**< Set the Reset (RST) pin to low logic level to assert reset signal */
+     MCAL_GPIO_SetPinValue(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_LOW);
     
-    // /**< Wait for a short delay */
-    // MCAL_STK_SetDelay_ms(15);
+     /**< Wait for a short delay */
+     MCAL_STK_SetDelay_ms(15);
     
-    // /**< Set the Reset (RES) pin to high logic level to release reset signal */
-    // MCAL_GPIO_SetPinValue(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_HIGH);
+     /**< Set the Reset (RES) pin to high logic level to release reset signal */
+     MCAL_GPIO_SetPinValue(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_HIGH);
     
-    // /**< Wait for a specified delay before proceeding */
-    // MCAL_STK_SetDelay_ms(15);
+     /**< Wait for a specified delay before proceeding */
+     MCAL_STK_SetDelay_ms(15);
     
-    // TFT_InitController(Copy_TftDisplay);
-
-    /**< init reset pin */
-    MCAL_GPIO_SetPinValue(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_HIGH);
-    MCAL_STK_SetBusyWait(100);
-    MCAL_GPIO_SetPinValue(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_LOW);
-    MCAL_STK_SetBusyWait(1);
-    MCAL_GPIO_SetPinValue(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_HIGH);
-    MCAL_STK_SetBusyWait(100);
-    MCAL_GPIO_SetPinValue(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_LOW);
-    MCAL_STK_SetBusyWait(100);
-    MCAL_GPIO_SetPinValue(Copy_TftDisplay->TFT_RESPin.TFT_Port, Copy_TftDisplay->TFT_RESPin.TFT_Pin, GPIO_HIGH);
-    MCAL_STK_SetDelay_ms(120);
-
-    /**< out form sleep mode */
-    TFT_SendCommand(Copy_TftDisplay, 0x11);
-    MCAL_STK_SetDelay_ms(150);
-
-    /**< set display color mode */
-    TFT_SendCommand(Copy_TftDisplay, 0x3A);
-    TFT_SendData(Copy_TftDisplay, 0x05);
-
-    /**< turn on for the display */
-    TFT_SendCommand(Copy_TftDisplay, 0x29);
-
+     TFT_InitController(Copy_TftDisplay);
 }
 
 void TFT_ClearScreen(const TFT_Config_t *Copy_TftDisplay)
@@ -372,8 +348,8 @@ static void TFT_InitController(const TFT_Config_t *Copy_TftDisplay)
     TFT_SendCommand(Copy_TftDisplay, 0xC5);
     TFT_SendData(Copy_TftDisplay, 0x0E);
 
-    /**< Send command to disable display inversion */
-    TFT_SendCommand(Copy_TftDisplay, 0x20);
+    /**< Send command to display inversion on */
+    TFT_SendCommand(Copy_TftDisplay, 0x21);
 
     /**< Send command to configure memory access control */
     TFT_SendCommand(Copy_TftDisplay, 0x36);

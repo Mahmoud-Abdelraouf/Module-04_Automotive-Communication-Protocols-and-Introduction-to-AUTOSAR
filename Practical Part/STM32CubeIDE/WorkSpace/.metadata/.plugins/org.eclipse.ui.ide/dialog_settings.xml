@@ -6,6 +6,11 @@
 		<item value="D:\Projects\Embedded\Bare_Matel\Work\IEEE_Module_03\COTS\STM32F103C8\APP\Bootloader"/>
 	</list>
 	<section name="org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea">
-		<item value="D:\Projects\Embedded\Bare_Matel\Work\IEEE_Module_04\Practical Part\STM32CubeIDE\WorkSpace\GPIO_Test" key="OUTSIDE_LOCATION"/>
+		<item key="OUTSIDE_LOCATION" value="D:\Projects\Embedded\Bare_Matel\Work\IEEE_Module_04\Practical Part\STM32CubeIDE\WorkSpace\GPIO_Test"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="true"/>
+	</section>
+	<section name="NewWizardAction">
 	</section>
 </section>

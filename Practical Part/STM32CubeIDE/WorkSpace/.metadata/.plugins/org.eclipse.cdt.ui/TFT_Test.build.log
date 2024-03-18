@@ -1,11 +1,4 @@
-10:29:54 **** Incremental Build of configuration Debug for project TFT_Test ****
-make all 
-Invoking: Cross ARM GNU Print Size
-arm-none-eabi-size --format=berkeley "TFT_Test.elf"
-   text	   data	    bss	    dec	    hex	filename
-  49807	    176	    420	  50403	   c4e3	TFT_Test.elf
-Finished building: TFT_Test.siz
- 
 
-10:29:54 Build Finished (took 318ms)
+**** Build of configuration Debug for project TFT_Test ****
 
+Nothing to build for project TFT_Test
