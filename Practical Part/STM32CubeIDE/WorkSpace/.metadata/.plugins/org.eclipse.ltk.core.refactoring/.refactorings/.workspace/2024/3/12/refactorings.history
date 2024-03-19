@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;TFT_Test/Debug&apos;" deleteContents="false" description="Delete resource &apos;TFT_Test/Debug&apos;" element1="/TFT_Test/Debug" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1710786127408"/>&#x0A;<refactoring comment="Delete resource &apos;TFT_Test&apos;" deleteContents="false" description="Delete resource &apos;TFT_Test&apos;" element1="/TFT_Test" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1710786137851"/>
-</session>
