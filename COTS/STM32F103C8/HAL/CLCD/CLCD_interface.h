@@ -8,6 +8,40 @@
 #define LCD_INTERFACE_H
 
 /**
+ * @brief macros defining LCD rows.
+ */
+#define LCD_ROW_1 0       /**< Row 1 */
+#define LCD_ROW_2 1       /**< Row 2 */
+
+/**
+ * @brief macros defining LCD columns.
+ */
+#define LCD_COLUMN_1  0   /**< Column 1 */
+#define LCD_COLUMN_2  1   /**< Column 2 */
+#define LCD_COLUMN_3  2   /**< Column 3 */
+#define LCD_COLUMN_4  3   /**< Column 4 */
+#define LCD_COLUMN_5  4   /**< Column 5 */
+#define LCD_COLUMN_6  5   /**< Column 6 */
+#define LCD_COLUMN_7  6   /**< Column 7 */
+#define LCD_COLUMN_8  7   /**< Column 8 */
+#define LCD_COLUMN_9  8   /**< Column 9 */
+#define LCD_COLUMN_10 9   /**< Column 10 */
+#define LCD_COLUMN_11 10  /**< Column 11 */
+#define LCD_COLUMN_12 11  /**< Column 12 */
+#define LCD_COLUMN_13 12  /**< Column 13 */
+#define LCD_COLUMN_14 13  /**< Column 14 */
+#define LCD_COLUMN_15 14  /**< Column 15 */
+#define LCD_COLUMN_16 15  /**< Column 16 */
+
+/**
+ * @brief Structure representing a custom character for LCD.
+ */
+typedef struct {
+    uint8_t pattern[8]; /**< Pattern data for the custom character */
+    uint8_t charIndex;  /**< Index of the custom character (0-7) */
+} CustomChar_t;
+
+/**
  * @brief Enum defining different port configurations for the LCD.
  */
 typedef enum {
@@ -149,7 +183,70 @@ void HAL_LCD_SendNumber(const LCD_Config_t *config, double number);
  * @param[in] number The signed integer value whose integer part is to be displayed on the LCD.
  * @note This function assumes that the required LCD character functions have been initialized separately.
  */
-void HAL_LCD_SendIntegerPart(const LCD_Config_t *config, s32 number);
+void HAL_LCD_SendIntegerNumber(const LCD_Config_t *config, s32 number);
+
+/**
+ * @brief Defines a custom character on the LCD.
+ *
+ * This function defines a custom character on the LCD by storing its pattern data
+ * in the CGRAM at the specified index.
+ *
+ * @param[in] lcdConfig Pointer to the LCD configuration structure.
+ * @param[in] customChar Custom character to be defined.
+ * @return E_OK if the custom character was successfully defined, E_NOT_OK otherwise.
+ *
+ * @example LCD_define_custom_char_example.c
+ *
+ * This example demonstrates how to define a custom character on the LCD using the
+ * LCD_DefineCustomChar function.
+ *
+ * @code
+ * /// Define a custom character pattern (5x8 dots)
+ * const uint8_t myCustomCharPattern[8] = {
+ *     0bxxx00000,
+ *     0bxxx00100,
+ *     0bxxx00110,
+ *     0bxxx01110,
+ *     0bxxx11110,
+ *     0bxxx01110,
+ *     0bxxx00110,
+ *     0bxxx00000
+ * };
+ *
+ * /// Create a CustomChar_t object
+ * CustomChar_t myCustomChar = {
+ *     .pattern = myCustomCharPattern, /// Set the pattern data
+ *     .charIndex = 0                  /// Set the index where the character will be stored in CGRAM
+ * };
+ *
+ * /// Define the custom character on the LCD
+ * Std_ReturnType result = LCD_DefineCustomChar(&lcdConfig, &myCustomChar);
+ *
+ * /// Check the result
+ * if (result == E_OK) {
+ *     /// Custom character successfully defined
+ *     /// Now you can display this character at any position using LCD_DisplayCustomChar function
+ * } else {
+ *     /// Failed to define custom character
+ *     /// Handle the error accordingly
+ * }
+ * @endcode
+ */
+Std_ReturnType LCD_DefineCustomChar(const LCD_Config_t *lcdConfig, const CustomChar_t *customChar);
+
+/**
+ * @brief Displays a custom character on the LCD at a specified position.
+ *
+ * This function displays a custom character previously defined at the specified index
+ * on the LCD at the specified row and column.
+ *
+ * @param[in] lcdConfig Pointer to the LCD configuration structure.
+ * @param[in] charIndex Index of the custom character to be displayed (0-7).
+ * @param[in] row The row (0 or 1) where the custom character should be displayed.
+ * @param[in] column The column (0 to 15) where the custom character should be displayed.
+ * @return E_OK if the custom character was successfully displayed, E_NOT_OK otherwise.
+ */
+Std_ReturnType LCD_DisplayCustomChar(const LCD_Config_t *lcdConfig, uint8_t charIndex, uint8_t row, uint8_t column);
 
 /**
  * @brief Clears the display of the LCD.
@@ -167,13 +264,13 @@ void HAL_LCD_Clear(const LCD_Config_t *config);
  * @brief Moves the cursor of the LCD to a specific position.
  *
  * This function moves the cursor of the LCD module based on the provided coordinates
- * (x and y) within the screen bounds specified by the LCD configuration.
+ * (row and column) within the screen bounds specified by the LCD configuration.
  *
  * @param[in] config Pointer to the LCD configuration structure.
- * @param[in] x The x-coordinate (row) on the LCD (0 or 1 for a two-row display).
- * @param[in] y The y-coordinate (column) on the LCD (0 to 15 for a 16-column display).
+ * @param[in] row The row (LCD_ROW_1 or LCD_ROW_2) on the LCD.
+ * @param[in] column The column (LCD_COLUMN_1 to LCD_COLUMN_16) on the LCD.
  * @note This function assumes that the required LCD command functions have been initialized separately.
  */
-void HAL_LCD_GoToXYPos(const LCD_Config_t *config, uint8_t x, uint8_t y);
+void LCD_GoToXYPos(const LCD_Config_t *config, uint8_t row, uint8_t column);
 
 #endif /* LCD_DRIVER_H */

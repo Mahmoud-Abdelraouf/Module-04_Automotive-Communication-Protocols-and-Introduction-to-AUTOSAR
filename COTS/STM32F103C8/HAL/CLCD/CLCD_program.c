@@ -119,7 +119,7 @@ void HAL_LCD_SendString(const LCD_Config_t *config, const uint8_t *string)
     }
 }
 
-void HAL_LCD_SendIntegerPart(const LCD_Config_t *config, s32 number) {
+void HAL_LCD_SendIntegerNumber(const LCD_Config_t *config, s32 number) {
     u8 Local_Integer[11] = {0};
     s8 Local_Counter = 0;
 
@@ -148,7 +148,7 @@ void HAL_LCD_SendNumber(const LCD_Config_t *config, double number) {
     /**< Display integer part */ 
     u32 integerPart = (u32)number;
 
-    HAL_LCD_SendIntegerPart(config, (s32)integerPart); // Function to handle integer part
+    HAL_LCD_SendIntegerNumber(config, (s32)integerPart); // Function to handle integer part
 
     /**< Display decimal point */ 
     HAL_LCD_SendChar(config, '.');
@@ -165,22 +165,90 @@ void HAL_LCD_SendNumber(const LCD_Config_t *config, double number) {
     }
 }
 
+Std_ReturnType LCD_DefineCustomChar(const LCD_Config_t *lcdConfig, const CustomChar_t *customChar) {
+	/**< Check if lcdConfig is NULL */
+	if (lcdConfig == NULL) {
+		return E_NOT_OK; /**< Return E_NOT_OK to indicate failure */
+	}
+
+    /**< Check if customChar is NULL */
+    if (customChar == NULL) {
+        return E_NOT_OK; /**< Return E_NOT_OK to indicate failure */
+    }
+
+    /**< Check if charIndex is within the range (0-7) */
+    if (customChar->charIndex > 7) {
+        return E_NOT_OK; /**< Return E_NOT_OK to indicate failure */
+    }
+
+    /**< Check if pattern is NULL */
+    if (customChar->pattern == NULL) {
+        return E_NOT_OK; /**< Return E_NOT_OK to indicate failure */
+    }
+
+    /**< Calculate the CGRAM address for the custom character */
+    uint8_t address = _LCD_CGRAM_START + customChar->charIndex * 8;
+
+    /**< Send the command to set CGRAM address */
+    LCD_SendCommand(lcdConfig, address);
+
+    /**< Write the pattern data for the custom character to CGRAM */
+    for (int i = 0; i < 8; ++i) {
+        LCD_SendChar(lcdConfig, customChar->pattern[i]);
+    }
+
+    return E_OK; /**< Return E_OK to indicate success */
+}
+
+Std_ReturnType LCD_DisplayCustomChar(const LCD_Config_t *lcdConfig, uint8_t charIndex, uint8_t row, uint8_t column) {
+    /**< Check if lcdConfig is NULL */
+    if (lcdConfig == NULL) {
+        return E_NOT_OK; /**< Return E_NOT_OK to indicate failure */
+    }
+
+    /**< Check if charIndex is within the range (0-7) */
+    if (charIndex > 7) {
+        return E_NOT_OK; /**< Return E_NOT_OK to indicate failure */
+    }
+
+    /**< Check if row is within the valid range (0 or 1) */
+    if (row > 1) {
+        return E_NOT_OK; /**< Return E_NOT_OK to indicate failure */
+    }
+
+    /**< Check if column is within the valid range (0 to 15) */
+    if (column > 15) {
+        return E_NOT_OK; /**< Return E_NOT_OK to indicate failure */
+    }
+
+    /**< Calculate the DDRAM address based on row and column */
+    uint8_t ddramAddress = (row == 0) ? (0x80 + column) : (0xC0 + column);
+
+    /**< Set the DDRAM address */
+    LCD_SendCommand(lcdConfig, ddramAddress);
+
+    /**< Send the character index to display the custom character */
+    LCD_SendChar(lcdConfig, charIndex);
+
+    return E_OK; /**< Return E_OK to indicate success */
+}
+
 void HAL_LCD_Clear(const LCD_Config_t *config) 
 {
     HAL_LCD_SendCommand(config, _LCD_CLEAR);
 }
 
-void HAL_LCD_GoToXYPos(const LCD_Config_t *config, uint8_t x, uint8_t y) {
+void HAL_LCD_GoToXYPos(const LCD_Config_t *config, uint8_t row, uint8_t column) {
     /**< Check if the coordinates are within bounds */ 
-    if ((y < 2) && (x >= 0 && x <= 15)) {
+    if ((row < 2) && (column >= 0 && column <= 15)) {
         u8 localAddress = 0;
 
-        switch (y) {
+        switch (row) {
             case 0:
-                localAddress = x;
+                localAddress = column;
                 break;
             case 1:
-                localAddress = x + _LCD_CGRAM_START;
+                localAddress = column + _LCD_CGRAM_START;
                 break;
             default:
                 break;
